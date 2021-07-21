@@ -1,0 +1,29 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class #SCRIPTNAME# : EditorWindow
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnEnable()
+    {
+        minSize = new Vector2(300, 300);
+        titleContent = new GUIContent("#WINDOWNAME#");
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnGUI()
+    {
+        
+    }
+
+    [MenuItem("#MENUITEM#")]
+    public static void Open()
+    {
+        GetWindow<#SCRIPTNAME#>();
+    }
+}

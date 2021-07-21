@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5560bad7bd3889d49a4abbb087b5e0fa, type: 3}
+  m_Name: ScriptCreatorSettings
+  m_EditorClassIdentifier: 
+  scriptTemplates:
+  - Name: EditorWindow
+    TextAsset: {fileID: 4900000, guid: 0d9e4c08f744bd14db67b389f11a4125, type: 3}
+    Parameters:
+    - Name: Menu Path
+      Placeholder: '#MENUITEM#'
+      Default: Window/MyWindow
+    - Name: Window NAME
+      Placeholder: '#WINDOWNAME#'
+      Default: My Window
+  - Name: CustomEditor
+    TextAsset: {fileID: 4900000, guid: 0c4803218ec4552489b984c1003925fb, type: 3}
+    Parameters:
+    - Name: Editor Of
+      Placeholder: '#EDITOROF#'
+      Default: Class Name
+  - Name: Default
+    TextAsset: {fileID: 4900000, guid: 133f5151f04460944adbf0358111ec39, type: 3}
+    Parameters: []
+  - Name: ScriptableObject
+    TextAsset: {fileID: 4900000, guid: 46466ee726fb59d42a98429b5f2962e4, type: 3}
+    Parameters:
+    - Name: File Name
+      Placeholder: '#FILENAME#'
+      Default: MyNewScriptable
+    - Name: Menu Path
+      Placeholder: '#MENUPATH#'
+      Default: Lovatto/MyClass
+  - Name: ScriptableObjectSettings
+    TextAsset: {fileID: 4900000, guid: 1e8baad939785014c928e4b3522bf89c, type: 3}
+    Parameters:
+    - Name: File Name
+      Placeholder: '#FILENAME#'
+      Default: MyNewScriptable
+    - Name: Menu Path
+      Placeholder: '#MENUPATH#'
+      Default: Lovatto/MyClass
+  - Name: EditorWindow W Layout
+    TextAsset: {fileID: 4900000, guid: a797cf81c16afc243abca503d413b7f6, type: 3}
+    Parameters:
+    - Name: Menu Item
+      Placeholder: '#MENUITEM#'
+      Default: Lovatto/
+  scriptNamespaces:
+  - Lovatto.EditorTools.ScriptCreator
+  - Lovatto.UI.Radial

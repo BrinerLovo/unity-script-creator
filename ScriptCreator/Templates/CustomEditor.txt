@@ -1,0 +1,33 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(#EDITOROF#))]
+public class #SCRIPTNAME# : Editor
+{
+    #EDITOROF# script;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnEnable()
+    {
+        script = (#EDITOROF#)target;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public override void OnInspectorGUI()
+    {
+        EditorGUI.BeginChangeCheck();
+
+        base.OnInspectorGUI();
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            serializedObject.ApplyModifiedProperties();
+            EditorUtility.SetDirty(target);
+        }
+    }
+}

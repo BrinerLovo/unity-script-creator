@@ -1,0 +1,8 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu( fileName = "#FILENAME#", menuName = "#MENUPATH#")]
+public class #SCRIPTNAME# : ScriptableObject
+{
+
+}

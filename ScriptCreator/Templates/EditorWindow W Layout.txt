@@ -1,0 +1,68 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class #SCRIPTNAME# : EditorWindow
+{
+    private Color backgroundColor = new Color(0.07058824f, 0.07058824f, 0.07058824f, 1);
+    private Color headerColor = new Color(0.1529412f, 0.1529412f, 0.1529412f, 1);
+    private float headerHeight = 40;
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnEnable()
+    {
+        titleContent = new GUIContent("Title");
+        minSize = new Vector2(400, 500);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private void OnGUI()
+    {
+        EditorGUI.DrawRect(new Rect(0, 0, position.width, position.height), backgroundColor);
+        Header();
+        Content();
+        Footer();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void Header()
+    {
+        Rect r = EditorGUILayout.BeginHorizontal(GUILayout.Height(headerHeight));
+        {
+            EditorGUI.DrawRect(r, headerColor);
+            GUILayout.Space(10);        
+            GUILayout.FlexibleSpace();
+            GUILayout.Space(10);
+        }
+        EditorGUILayout.EndHorizontal();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void Content()
+    {
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void Footer()
+    {
+
+    }
+
+    [MenuItem("#MENUITEM#")]
+    static void Open()
+    {
+        GetWindow<#SCRIPTNAME#>();
+    }
+}
