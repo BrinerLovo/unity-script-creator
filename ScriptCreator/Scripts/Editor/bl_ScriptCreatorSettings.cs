@@ -43,6 +43,7 @@ public class bl_ScriptCreatorSettings : ScriptableObject
         public string Name;
         public string Placeholder;
         public string Default;
+        public bool AllowDragReference = false;
     }
 
     private static bl_ScriptCreatorSettings _data;

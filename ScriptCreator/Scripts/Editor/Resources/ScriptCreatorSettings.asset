@@ -19,15 +19,18 @@ MonoBehaviour:
     - Name: Menu Path
       Placeholder: '#MENUITEM#'
       Default: Window/MyWindow
+      AllowDragReference: 0
     - Name: Window NAME
       Placeholder: '#WINDOWNAME#'
       Default: My Window
+      AllowDragReference: 0
   - Name: CustomEditor
     TextAsset: {fileID: 4900000, guid: 0c4803218ec4552489b984c1003925fb, type: 3}
     Parameters:
     - Name: Editor Of
       Placeholder: '#EDITOROF#'
       Default: Class Name
+      AllowDragReference: 1
   - Name: Default
     TextAsset: {fileID: 4900000, guid: 133f5151f04460944adbf0358111ec39, type: 3}
     Parameters: []
@@ -37,24 +40,29 @@ MonoBehaviour:
     - Name: File Name
       Placeholder: '#FILENAME#'
       Default: MyNewScriptable
+      AllowDragReference: 0
     - Name: Menu Path
       Placeholder: '#MENUPATH#'
       Default: Lovatto/MyClass
+      AllowDragReference: 0
   - Name: ScriptableObjectSettings
     TextAsset: {fileID: 4900000, guid: 1e8baad939785014c928e4b3522bf89c, type: 3}
     Parameters:
     - Name: File Name
       Placeholder: '#FILENAME#'
       Default: MyNewScriptable
+      AllowDragReference: 0
     - Name: Menu Path
       Placeholder: '#MENUPATH#'
       Default: Lovatto/MyClass
+      AllowDragReference: 0
   - Name: EditorWindow W Layout
     TextAsset: {fileID: 4900000, guid: a797cf81c16afc243abca503d413b7f6, type: 3}
     Parameters:
     - Name: Menu Item
       Placeholder: '#MENUITEM#'
       Default: Lovatto/
+      AllowDragReference: 0
   scriptNamespaces:
   - Lovatto.EditorTools.ScriptCreator
   - Lovatto.UI.Radial
