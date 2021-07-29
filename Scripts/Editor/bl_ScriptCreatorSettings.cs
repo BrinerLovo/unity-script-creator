@@ -8,6 +8,7 @@ public class bl_ScriptCreatorSettings : ScriptableObject
 {
     public Template[] scriptTemplates;
     public List<string> scriptNamespaces = new List<string>();
+    public TextAsset packageJsonTemplate;
 
     public void AddTemplate(Template template)
     {

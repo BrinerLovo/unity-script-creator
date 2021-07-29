@@ -1,0 +1,20 @@
+{
+  "name": "#name#",
+  "version": "#version#",
+  "displayName": "#displayName#",
+  "description": "#description#",
+  "unity": "#unity#",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "dependencies": {
+ },
+ "keywords": [
+   #keywords#
+  ],
+  "author": {
+    "name": "#author#",
+    "email": "#email#",
+    "url": "#url#"
+  }
+}

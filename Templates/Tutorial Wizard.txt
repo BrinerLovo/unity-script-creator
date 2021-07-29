@@ -1,0 +1,55 @@
+using UnityEngine;
+using UnityEditor;
+using Lovatto.Dev;
+
+public class #SCRIPTNAME# : TutorialWizard
+{
+    //required//////////////////////////////////////////////////////
+    public string FolderPath = "asset-name/editor/";
+    public NetworkImages[] m_ServerImages = new NetworkImages[]
+    {
+        new NetworkImages{Name = "img-0.png", Image = null},
+        new NetworkImages{Name = "img-1.png", Image = null},
+        new NetworkImages{Name = "img-2.png", Image = null},
+        new NetworkImages{Name = "img-3.png", Image = null},
+        new NetworkImages{Name = "img-4.png", Image = null},
+    };
+    public Steps[] AllSteps = new Steps[] {
+    new Steps { Name = "Get Started", StepsLenght = 0 , DrawFunctionName = nameof(GetStartedDoc)},
+    new Steps { Name = "Second Section", StepsLenght = 0, DrawFunctionName = nameof(SecondSection) },
+    };
+    private readonly GifData[] AnimatedImages = new GifData[]
+   {
+        new GifData{ Path = "name.gif" },
+   };
+
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        base.Initizalized(m_ServerImages, AllSteps, FolderPath, AnimatedImages);
+        Style.highlightColor = ("#c9f17c").ToUnityColor();
+        allowTextSuggestions = true;
+    }
+
+    public override void WindowArea(int window)
+    {
+        AutoDrawWindows();
+    }
+    //final required////////////////////////////////////////////////
+
+    void GetStartedDoc()
+    {
+
+    }
+
+    void SecondSection()
+    {
+
+    }
+
+    [MenuItem("#MENUITEM#")]
+    static void Open()
+    {
+        GetWindow<#SCRIPTNAME#>();
+    }
+}

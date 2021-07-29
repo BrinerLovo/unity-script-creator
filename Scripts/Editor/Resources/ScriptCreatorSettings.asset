@@ -63,6 +63,14 @@ MonoBehaviour:
       Placeholder: '#MENUITEM#'
       Default: Lovatto/
       AllowDragReference: 0
+  - Name: Tutorial Wizard
+    TextAsset: {fileID: 4900000, guid: 4f9d2a5b6dfc4e14cb126c82f41ebc12, type: 3}
+    Parameters:
+    - Name: MENUITEM
+      Placeholder: '#MENUITEM#'
+      Default: Window/Documentation/AssetName
+      AllowDragReference: 0
   scriptNamespaces:
   - Lovatto.EditorTools.ScriptCreator
   - Lovatto.UI.Radial
+  packageJsonTemplate: {fileID: 4900000, guid: 670bfea55f9040842943feb4163551a6, type: 3}

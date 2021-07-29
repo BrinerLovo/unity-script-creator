@@ -21,6 +21,7 @@ public class bl_FolderCreator : EditorWindow
     {
         minSize = new Vector2(300, 300);
         titleContent = new GUIContent("Folder Creator");
+        parentPath = "Assets/";
     }
 
     /// <summary>
@@ -28,6 +29,7 @@ public class bl_FolderCreator : EditorWindow
     /// </summary>
     private void OnGUI()
     {
+        EditorStyles.miniLabel.richText = true;
         EditorGUILayout.BeginVertical("box");
         parentReference = EditorGUILayout.ObjectField("Parent Folder", parentReference, typeof(Object), false) as Object;
         if(lastObjects != parentReference)
@@ -41,6 +43,7 @@ public class bl_FolderCreator : EditorWindow
         EditorGUILayout.EndVertical();
 
         newFolderName = EditorGUILayout.TextField("New Folder", newFolderName);
+        GUILayout.Label($"<i>{parentPath}{newFolderName}</i>", EditorStyles.miniLabel);
         if(GUILayout.Button("Create new asset folder structure"))
         {
             CreateNewAssetFolderStructure();
@@ -67,9 +70,9 @@ public class bl_FolderCreator : EditorWindow
 
         subPath = newPath;
         subPath = CreateSubFolder(subPath, "Art");
-        CreateSubFolder(subPath, "Art/UI");
-        CreateSubFolder(subPath, "Art/Font");
-        CreateSubFolder(subPath, "Art/Audio");
+        CreateSubFolder(subPath, "UI");
+        CreateSubFolder(subPath, "Font");
+        CreateSubFolder(subPath, "Audio");
 
         subPath = newPath;
         subPath = CreateSubFolder(subPath, "Prefabs");

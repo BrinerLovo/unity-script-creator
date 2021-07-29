@@ -1,0 +1,18 @@
+{
+  "name": "com.lovatto.editor.scriptcreator",
+  "version": "1.0.0",
+  "displayName": "Script Creator",
+  "description": "Create script from premade templates.",
+  "unity": "2019.4",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "keywords": [],
+  "author": {
+    "name": "Lovatto",
+    "email": "contact.lovattostudio@gmail.com",
+    "url": "https://www.lovattostudio.com"
+  },
+  "type": "tool",
+  "hideInEditor": false
+}

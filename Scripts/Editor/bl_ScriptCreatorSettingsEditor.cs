@@ -32,7 +32,7 @@ namespace Lovatto.EditorTools.ScriptCreator
 	        EditorGUI.BeginChangeCheck();
 	
 	        list.DoLayoutList();
-	
+			script.packageJsonTemplate = EditorGUILayout.ObjectField("Package Json Template", script.packageJsonTemplate, typeof(TextAsset), false) as TextAsset;
 	        if (EditorGUI.EndChangeCheck())
 	        {
 	            serializedObject.ApplyModifiedProperties();
