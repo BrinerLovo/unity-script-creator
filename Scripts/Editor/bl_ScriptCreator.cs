@@ -134,8 +134,34 @@ namespace Lovatto.EditorTools.ScriptCreator
             {
                 var param = CurrentTemplate.Parameters[i];
 
+                if (param.CanBeAutomate() && !string.IsNullOrEmpty(className) && GUI.GetNameOfFocusedControl() != param.Name)
+                {
+                    string filterClassName = className.Replace("bl_", "");
+                    if (param.AutomateName == bl_ScriptCreatorSettings.AutomateNameType.Nicify)
+                    {
+                        if (tempParameters[i].Contains("/"))
+                        {
+                            int lastSlash = tempParameters[i].LastIndexOf("/");
+                            string subStr = tempParameters[i].Substring(0, lastSlash);
+                            tempParameters[i] = $"{subStr}/{NicifyVariableName(filterClassName)}";
+                        }
+                        else
+                        {
+                            tempParameters[i] = NicifyVariableName(filterClassName);
+                        }
+                    }
+                }
+
                 EditorGUILayout.BeginHorizontal();
+                GUI.SetNextControlName(param.Name);
+
+                if(GUI.GetNameOfFocusedControl() == param.Name)
+                {
+                    param._HasBeenFocused = true;
+                }
+
                 tempParameters[i] = EditorGUILayout.TextField(param.Name, tempParameters[i]);
+
                 if (param.AllowDragReference)
                 {
                     tempRef = EditorGUILayout.ObjectField(tempRef, typeof(Object), true, GUILayout.Width(55));
@@ -237,6 +263,7 @@ namespace Lovatto.EditorTools.ScriptCreator
             for (int i = 0; i < tempParameters.Length; i++)
             {
                 tempParameters[i] = CurrentTemplate.Parameters[i].Default;
+                CurrentTemplate.Parameters[i]._HasBeenFocused = false;
             }
         }
 
@@ -252,6 +279,33 @@ namespace Lovatto.EditorTools.ScriptCreator
         private bl_ScriptCreatorSettings.Template CurrentTemplate
         {
             get { return bl_ScriptCreatorSettings.Instance.scriptTemplates[selectedTemplate]; }
+        }
+
+        /// <summary>
+        /// Make a displayable name for a variable like name.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string NicifyVariableName(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return str;
+
+            string result = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (i == 0)
+                {
+                    result += char.ToUpper(str[i]);
+                    continue;
+                }
+                if (char.IsUpper(str[i]) == true && i != 0)
+                {
+                    result += " ";
+                }
+
+                result += str[i];
+            }
+            return result;
         }
 
         [MenuItem("Assets/Create/Create Script", false, 82)]

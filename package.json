@@ -1,6 +1,6 @@
 {
   "name": "com.lovatto.editor.scriptcreator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "displayName": "Script Creator",
   "description": "Create script from premade templates.",
   "unity": "2019.4",

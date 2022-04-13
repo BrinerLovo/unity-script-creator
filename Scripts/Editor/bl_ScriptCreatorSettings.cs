@@ -45,6 +45,22 @@ public class bl_ScriptCreatorSettings : ScriptableObject
         public string Placeholder;
         public string Default;
         public bool AllowDragReference = false;
+        public AutomateNameType AutomateName = AutomateNameType.None;
+
+        [NonSerialized]public bool _HasBeenFocused = false;
+
+        public bool CanBeAutomate()
+        {
+            return AutomateName != AutomateNameType.None && !_HasBeenFocused;
+        }
+    }
+
+    [Serializable]
+    public enum AutomateNameType
+    {
+        None,
+        Nicify,
+        RemovePrefix,
     }
 
     private static bl_ScriptCreatorSettings _data;
